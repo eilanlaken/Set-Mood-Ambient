@@ -8,6 +8,8 @@ import CreateAmbientItem from './components/CreateAmbientItem';
 export default function App() {
   const [display, setDisplay] = useState('create');
 
+  setInterval(() => console.log('hi'), 1000);
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
