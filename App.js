@@ -25,10 +25,16 @@ export default function App() {
   setAudioMode();
   
 
-  const playSound = async () => {
+  const playSound1 = async () => {
     const { sound: rain } = await Audio.Sound.createAsync(require('./assets/sounds/light-rain.mp3'));
     setWeatherSound(rain);
     await rain.playAsync();
+  }
+
+  const playSound2 = async () => {
+    const { sound: beep } = await Audio.Sound.createAsync(require('./assets/sounds/beep.mp3'));
+    setBeep(beep);
+    await beep.playAsync();
   }
 
 
@@ -39,7 +45,9 @@ export default function App() {
       <StatusBar style="auto" />
         {display == 'play' && <AmbientList />}
         {display == 'create' && <CreateAmbientItem />}
-        <Button title="Play Sound" onPress={playSound} />
+        <Button title="Play Sound" onPress={playSound1} />
+        <Button title="Play Sound" onPress={playSound2} />
+
       <Navigation setDisplay={setDisplay}/>
     </SafeAreaView>
   );
