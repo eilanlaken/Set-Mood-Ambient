@@ -10,8 +10,7 @@ const setAudioMode = async () => {
   await Audio.setAudioModeAsync({
     allowsRecordingIOS: false,
     staysActiveInBackground: true,
-    interruptionModeIOS: InterruptionModeIOS.DuckOthers,
-    playsInSilentModeIOS: true,
+    interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
     shouldDuckAndroid: true,
     interruptionModeAndroid: InterruptionModeAndroid.DuckOthers,
     playThroughEarpieceAndroid: false
