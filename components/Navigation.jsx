@@ -1,6 +1,7 @@
 import { View, StyleSheet, TouchableOpacity,Text } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+// TODO: change layout to a signle toggle button
 const Navigation = ({setDisplay}) => {
 
     return (
@@ -8,7 +9,6 @@ const Navigation = ({setDisplay}) => {
             <TouchableOpacity
                 style={styles.touchable}
                 activeOpacity={0.9}
-                    underlayColor="#ddd"
                 onPress={() => setDisplay('create')}>
                 <View style={styles.btn}>
                     <Text style={{color: '#eee'}}>Create</Text>
@@ -18,7 +18,6 @@ const Navigation = ({setDisplay}) => {
             <TouchableOpacity
                 style={styles.touchable}
                 activeOpacity={0.9}
-                    underlayColor="#DDDDDD"
                 onPress={() => setDisplay('play')}>
                 <View style={styles.btn}>
                     <Text style={{color: '#eee'}}>Play</Text>
