@@ -8,16 +8,8 @@ const getRandomGreenShade = () => {
     return "rgb(" + red + ", 255, " + blue + ")";
 }
 
-const AmbientItem = ({name, soundBundle}) => {
+const AmbientItem = ({name, soundBundle, play, stop}) => {
     const [isPlaying, setIsPlaying] = useState(false);
-
-    const handleStart = () => {
-
-    }
-
-    const handleStop = () => {
-
-    }
 
     return (
         <View style={{...styles.item, backgroundColor: getRandomGreenShade()}}>

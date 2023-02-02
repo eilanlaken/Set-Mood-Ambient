@@ -29,7 +29,7 @@ const CreateAmbientItem = () => {
 
             {/* Location */}
             <View>
-
+                
             </View>
 
             {/* Weather */}
