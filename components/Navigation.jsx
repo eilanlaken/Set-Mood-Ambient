@@ -1,30 +1,30 @@
-import { View, StyleSheet, TouchableHighlight, Text } from "react-native";
+import { View, StyleSheet, TouchableOpacity,Text } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Navigation = ({setDisplay}) => {
 
     return (
         <View style={styles.navigation}>
-            <TouchableHighlight
+            <TouchableOpacity
                 style={styles.touchable}
                 activeOpacity={0.9}
-                    underlayColor="#DDDDDD"
+                    underlayColor="#ddd"
                 onPress={() => setDisplay('create')}>
                 <View style={styles.btn}>
                     <Text style={{color: '#eee'}}>Create</Text>
-                    <Icon style={{paddingLeft: 8}}name='plus' size={20} color='#eee' />
+                    <Icon style={{paddingLeft: 8}} name='plus' size={20} color='#eee' />
                 </View>
-            </TouchableHighlight>
-            <TouchableHighlight
+            </TouchableOpacity>
+            <TouchableOpacity
                 style={styles.touchable}
                 activeOpacity={0.9}
                     underlayColor="#DDDDDD"
                 onPress={() => setDisplay('play')}>
                 <View style={styles.btn}>
                     <Text style={{color: '#eee'}}>Play</Text>
-                    <Icon style={{paddingLeft: 8}}name='play' size={18} color='#eee' />
+                    <Icon style={{paddingLeft: 8}} name='play' size={18} color='#eee' />
                 </View>
-            </TouchableHighlight>
+            </TouchableOpacity>
         </View>
     );
 };
@@ -35,15 +35,15 @@ const styles = StyleSheet.create({
         bottom: 0,
         right: 0,
         display: 'flex',
-        flexDirection: 'column',
-        padding: 20,
+        flexDirection: 'row',
+        padding: 2,
         paddingRight: 10,
-        margin: 5,
+        margin: 10,
         zIndex: 100,
         //backgroundColor: 'black' // for debugging
     },
     touchable: {
-        padding: 10
+        padding: 3
     },
     btn: {
         display: 'flex',

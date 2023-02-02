@@ -3,7 +3,8 @@ import { View, Text, StyleSheet, TextInput, TouchableHighlight } from "react-nat
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const CreateAmbientItem = () => {
-    const [name, setName] = useState('track_01')
+    const [name, setName] = useState('track_01');
+    
     return (
         <View style={styles.create}>
             {/* Header: TextInput name, Button save() */}

@@ -17,6 +17,32 @@ const setAudioMode = async () => {
   });
 }
 
+const items = [
+  {name: 'hifffffffffff', soundBundle: {}},
+  {name: 'bye', soundBundle: {}},
+  {name: 'h', soundBundle: {}},
+  {name: 'a', soundBundle: {}},
+  {name: 'b', soundBundle: {}},
+
+  {name: '1', soundBundle: {}},
+  {name: '2', soundBundle: {}},
+  {name: '3', soundBundle: {}},
+  {name: '4', soundBundle: {}},
+  {name: '5', soundBundle: {}},
+
+  {name: '6', soundBundle: {}},
+  {name: '7', soundBundle: {}},
+  {name: '8', soundBundle: {}},
+  {name: '9', soundBundle: {}},
+  {name: 'oo', soundBundle: {}},
+
+  {name: 'f', soundBundle: {}},
+  {name: 'g', soundBundle: {}},
+  {name: 'hh', soundBundle: {}},
+  {name: 'jj', soundBundle: {}},
+  {name: 'ii', soundBundle: {}},
+];
+
 export default function App() {
   const [display, setDisplay] = useState('create');
   const [weatherSound, setWeatherSound] = useState();
@@ -42,10 +68,13 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-        {display == 'play' && <AmbientList />}
+        {display == 'play' && <AmbientList items={items}/>}
         {display == 'create' && <CreateAmbientItem />}
-        <Button title="Play Sound" onPress={playSound1} />
-        <Button title="Play Sound" onPress={playSound2} />
+        
+
+        {/* Debugging */}
+        {/* <Button title="Play Sound" onPress={playSound1} />
+        <Button title="Play Sound" onPress={playSound2} /> */}
 
       <Navigation setDisplay={setDisplay}/>
     </SafeAreaView>
@@ -56,7 +85,7 @@ const styles = StyleSheet.create({
   container: {
     position: 'relative',
     flex: 1,
-    backgroundColor: '#faff00',
+    backgroundColor: '#111',
     alignItems: 'center',
     justifyContent: 'center',
   },

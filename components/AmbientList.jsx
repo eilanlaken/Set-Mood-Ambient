@@ -1,19 +1,33 @@
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, FlatList } from "react-native";
+import AmbientItem from "./AmbientItem";
 
-const AmbientList = () => {
+const AmbientList = ({items}) => {
 
     return (
         <View style={styles.list}>
-            <Text>Ambient List Component</Text>
+            <Text style={{color: '#eee', paddingBottom: 5, marginBottom: 6, fontSize: 20, alignSelf: 'center'}}>Your Collection</Text>
+            <FlatList
+                data={items}
+                renderItem={({item}) => <AmbientItem name={item.name} soundBundle={item.soundBundle} />}
+                keyExtractor={item => `${item.name}`}
+            />
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     list: {
-        padding: 20,
-        margin: 20,
-        backgroundColor: 'purple', // debugging
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'stretch',
+        justifyContent: 'space-around',     
+        width: '90%',
+        maxHeight: '80%',
+        minHeight: '85%',
+        padding: 10,
+        marginTop: 10,
+        marginBottom: 50,
+        marginHorizontal: 20,
     }
 });
 
