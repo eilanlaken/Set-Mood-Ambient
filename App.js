@@ -82,7 +82,7 @@ export default function App() {
         {/* <Button title="Play Sound" onPress={playSound1} />
         <Button title="Play Sound" onPress={playSound2} /> */}
 
-      <Navigation setDisplay={setDisplay}/>
+      <Navigation display={display} setDisplay={setDisplay}/>
     </SafeAreaView>
   );
 }

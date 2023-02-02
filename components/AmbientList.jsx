@@ -20,14 +20,15 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'stretch',
-        justifyContent: 'space-around',     
+        justifyContent: 'center',     
         width: '90%',
         maxHeight: '80%',
         minHeight: '85%',
         padding: 10,
         marginTop: 10,
-        marginBottom: 50,
+        marginBottom: 10,
         marginHorizontal: 20,
+        alignSelf: 'center',
     }
 });
 

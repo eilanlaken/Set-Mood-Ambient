@@ -2,6 +2,12 @@ import { useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+const getRandomGreenShade = () => {
+    const red = Math.floor(Math.random() * 180);
+    const blue = Math.floor(Math.random() * 180);
+    return "rgb(" + red + ", 255, " + blue + ")";
+}
+
 const AmbientItem = ({name, soundBundle}) => {
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -14,10 +20,10 @@ const AmbientItem = ({name, soundBundle}) => {
     }
 
     return (
-        <View style={styles.item}>
-            <Text numberOfLines={1} style={{color: '#fff', width: '80%'}}>{name}</Text>
-            {!isPlaying && <Icon style={{paddingLeft: 8}} name='play' size={18} color='#eee' />}
-            {isPlaying && <Icon style={{paddingLeft: 8}} name='pause' size={18} color='#eee' />}
+        <View style={{...styles.item, backgroundColor: getRandomGreenShade()}}>
+            <Text numberOfLines={1} style={{color: '#222', width: '80%'}}>{name}</Text>
+            {!isPlaying && <Icon style={{paddingLeft: 8}} name='play' size={18} color='#222' />}
+            {isPlaying && <Icon style={{paddingLeft: 8}} name='pause' size={18} color='#222' />}
         </View>
     );
 };
