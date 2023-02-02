@@ -9,7 +9,7 @@ const AmbientList = ({items}) => {
             <FlatList
                 data={items}
                 renderItem={({item}) => <AmbientItem name={item.name} soundBundle={item.soundBundle} />}
-                keyExtractor={item => `${item.name}`}
+                keyExtractor={(item, index) => `key_${index}`}
             />
         </View>
     );
