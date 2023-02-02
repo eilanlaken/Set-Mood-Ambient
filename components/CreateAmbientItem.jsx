@@ -18,7 +18,7 @@ const CreateAmbientItem = () => {
                 <TouchableHighlight
                     style={styles.touchable}
                     activeOpacity={0.9}
-                        underlayColor="#DDDDDD"
+                        underlayColor="#ddd"
                     onPress={() => alert('Pressed!')}>
                     <View style={styles.btn}>
                         <Text style={{color: '#eee'}}>Save</Text>

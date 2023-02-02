@@ -4,6 +4,8 @@ import { StyleSheet, Text, SafeAreaView, Button } from 'react-native';
 import Navigation from './components/Navigation';
 import AmbientList from './components/AmbientList';
 import CreateAmbientItem from './components/CreateAmbientItem';
+import * as NavigationBar from 'expo-navigation-bar';
+
 import { Audio } from 'expo-av';
 
 const setAudioMode = async () => {
@@ -15,10 +17,14 @@ const setAudioMode = async () => {
     interruptionModeAndroid: InterruptionModeAndroid.DuckOthers,
     playThroughEarpieceAndroid: false
   });
+};
+
+const setNavigationBarColor = async () => {
+  await NavigationBar.setBackgroundColorAsync('#111');
 }
 
 const items = [
-  {name: 'hifffffffffff', soundBundle: {}},
+  {name: 'hh', soundBundle: {}},
   {name: 'bye', soundBundle: {}},
   {name: 'h', soundBundle: {}},
   {name: 'a', soundBundle: {}},
@@ -48,7 +54,7 @@ export default function App() {
   const [weatherSound, setWeatherSound] = useState();
   const [beep, setBeep] = useState();
   setAudioMode();
-  
+  setNavigationBarColor();
 
   const playSound1 = async () => {
     const { sound: rain } = await Audio.Sound.createAsync(require('./assets/sounds/light-rain.mp3'));
@@ -67,7 +73,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar style="auto" />
+      <StatusBar backgroundColor='#111' style='light' />
         {display == 'play' && <AmbientList items={items}/>}
         {display == 'create' && <CreateAmbientItem />}
         
