@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyleSheet, Text, SafeAreaView, Button } from 'react-native';
 import Navigation from './components/Navigation';
 import AmbientList from './components/AmbientList';
@@ -53,6 +53,19 @@ export default function App() {
   const [display, setDisplay] = useState('create');
   const [weatherSound, setWeatherSound] = useState();
   const [beep, setBeep] = useState();
+  const [soundBundles, setSoundBundles] = useState(null);
+  
+  useEffect(() => {
+    /* load sounds code */
+    console.log('Loading Sound');
+
+    /* return a cleanup function */
+    return soundBundles ? () => {
+      console.log('Unloading Sound');
+      
+    } : undefined;
+  }, [soundBundles]);
+
   setAudioMode();
   setNavigationBarColor();
 
