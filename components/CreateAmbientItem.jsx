@@ -26,6 +26,22 @@ const CreateAmbientItem = () => {
                     </View>
                 </TouchableHighlight>
             </View>
+
+            {/* Location */}
+            <View>
+
+            </View>
+
+            {/* Weather */}
+            <View>
+
+            </View>
+
+            {/* environment */}
+            <View>
+
+            </View>
+
         </View>
     );
 };
